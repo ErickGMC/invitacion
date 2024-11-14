@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Cumpleaños</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffccff, #66ccff);
+        }
+        .card {
+            position: relative;
+            width: 350px;
+            height: 500px;
+            perspective: 1000px;
+            cursor: pointer;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .card-front {
+            background: linear-gradient(135deg, #ff8c8c, #ffc107);
+            flex-direction: column;
+            font-size: 1.2em;
+        }
+        .card-back {
+            background: linear-gradient(135deg, #4db8ff, #66cc66);
+            transform: rotateY(180deg);
+            flex-direction: column;
+            padding: 30px;
+        }
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        .title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff3e0;
+            text-shadow: 2px 2px #ff7043;
+        }
+        .message {
+            font-size: 1.1em;
+            margin-top: 20px;
+            color: #ffd54f;
+        }
+        .date {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .balloons {
+            animation: float 3s ease-in-out infinite;
+            width: 100px;
+        }
+        .cake, .clown {
+            width: 80px;
+            margin-top: 10px;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-inner">
+        <!-- Front of Card -->
+        <div class="card-front">
+            <h1 class="title">🎉 ¡Te Invito a Mi Cumpleaños! 🎉</h1>
+            <p>Haz clic para abrir la tarjeta</p>
+            <img src="https://cdn.pixabay.com/photo/2024/09/02/23/48/balloons-9018032_960_720.png" alt="Globos" class="balloons">
+            <img src="https://cdn.pixabay.com/photo/2014/04/02/10/45/birthday-cake-304440_1280.png" alt="Torta" class="cake">
+        </div>
+
+        <!-- Back of Card -->
+        <div class="card-back">
+            <h2>¡Fiesta de Cumpleaños de Alonso! 🎈</h2>
+            <p class="message">Nuestro pequeño Alonso cumple 2 años, ¡y queremos celebrarlo contigo!</p>
+            <p class="date">🗓️ Fecha: 23 de noviembre, 2024</p>
+            <p>⏰ Hora: 6:00 PM</p>
+            <p>📍 Dirección: Cooperativa Manylsa Mz i Lt 6a</p>
+            <p>¡No olvides traer tu sonrisa! 😄</p>
+            <img src="https://cdn.pixabay.com/animation/2024/08/21/21/53/21-53-18-816_512.gif" alt="Payaso" class="clown">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
